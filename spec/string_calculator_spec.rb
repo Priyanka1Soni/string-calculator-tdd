@@ -21,5 +21,10 @@ RSpec.describe StringCalculator do
       expect(StringCalculator.add("1,2,3")).to eq(6)
       expect(StringCalculator.add("1,2,3,4,5")).to eq(15)
     end
+
+    it "supports newlines as delimiters" do
+      expect(StringCalculator.add("1\n2,3")).to eq(6)
+      expect(StringCalculator.add("2\n3\n5")).to eq(10)
+    end
   end
 end
